@@ -79,19 +79,19 @@ Empty
 
 1. Chromosome level GFF file, only have longest transcript. (One gene, one mRNA)
 
-![chromosome_level_gff.png](images\ExtractedSNPfromVCF\chromosome_level_gff.png)
+![chromosome_level_gff.png](images/ExtractedSNPfromVCF/chromosome_level_gff.png)
 
 
 
 2. Target VCF file
 
-![VCF](images\ExtractedSNPfromVCF\VCF.png)
+![VCF](images/ExtractedSNPfromVCF/VCF.png)
 
 
 
 3. Single-copy genes ID list, this list corresponds to GFF file.
 
-![single-copy_genes_list](images\ExtractedSNPfromVCF\single-copy_genes_list.png)
+![single-copy_genes_list](images/ExtractedSNPfromVCF/single-copy_genes_list.png)
 
 
 
