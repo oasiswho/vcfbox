@@ -32,7 +32,7 @@ This script can extract SNP from a singlecopy gene ID and GFF into individual fa
 
 ### Quick install & start
 
-```python
+```
 #Install
 git clone https://github.com/oasiswho/vcfbox
 cd vcfbox
@@ -49,7 +49,7 @@ python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecop
 
 ### Usage
 
-```python
+```
 usage: ExtractedSNPfromVCF.py [-h] [-input VCF_file] [-gff GFF_file] [-scg SCG_file] [-snp snp_number] [-phy]{empty} ...
         
 Input
@@ -99,25 +99,25 @@ Empty
 
 Run with default parameters:
 
-```python
+```
 python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list empty -keep
 ```
 
 Output format phy
 
-```python
+```
 python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -phy empty -keep
 ```
 
 Gene screens by number of SNPs
 
-```python
+```
 python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -snp 1 empty -keep
 ```
 
 Discard all same name genes when one of the gene is empty
 
-```python
+```
 python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list empty -discard
 ```
 
