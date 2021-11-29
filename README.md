@@ -1,7 +1,5 @@
 # VCFbox
 
----
-
 Welcome to VCFbox! These box contains some tools for VCF. Version: 1.0
 
 
@@ -16,8 +14,6 @@ Requirement:
 
 # List of Tools
 
----
-
 <a href="#ExtractedSNPfromVCF">ExtractedSNPfromVCF</a>
 
 
@@ -26,15 +22,9 @@ Requirement:
 
 # Tools
 
----
-
 ## <span name = "ExtractedSNPfromVCF">ExtractedSNPfromVCF</span>
 
----
-
 ### Introduction
-
----
 
 This script can extract SNP from a singlecopy gene ID and GFF into individual fasta files by using VCF file
 
@@ -89,19 +79,19 @@ Empty
 
 1. Chromosome level GFF file, only have longest transcript. (One gene, one mRNA)
 
-![image-20211129125218239](D:\Desktop\VCFbox_readme.assets\image-20211129125218239.png)
+![chromosome_level_gff.png](images\ExtractedSNPfromVCF\chromosome_level_gff.png)
 
 
 
 2. Target VCF file
 
-![image-20211129125449620](D:\Desktop\VCFbox_readme.assets\image-20211129125449620.png)
+![VCF](images\ExtractedSNPfromVCF\VCF.png)
 
 
 
 3. Single-copy genes ID list, this list corresponds to GFF file.
 
-![image-20211129125759757](D:\Desktop\VCFbox_readme.assets\image-20211129125759757.png)
+![single-copy_genes_list](images\ExtractedSNPfromVCF\single-copy_genes_list.png)
 
 
 
@@ -211,4 +201,4 @@ V1.0 added python script ExtractedSNPfromVCF_V1.6
 
 ## Acknowledges
 
-I thank Mingcheng Wang for his generous help for unselfishly providing ideas for python script ExtractedSNPfromVCF.
+We thank Mingcheng Wang for his generous help for unselfishly providing ideas for python script ExtractedSNPfromVCF.
