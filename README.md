@@ -95,15 +95,17 @@ Sample files are from this paper:
 
 
 
-3. Single-copy genes ID list, this list should correspond to GFF file. You can use such as [OrthoFinder](https://github.com/davidemms/OrthoFinder) to get an Orthogroups directory. And then use this command to get a single-copy genes ID list.
-
-   ```shell
-   grep -Fwf Orthogroups_SingleCopyOrthologues.txt Orthogroups.txt > full.SingleCopyGenesIDS.txt
-   ```
+3. Single-copy genes ID list, this list should correspond to GFF file. 
 
    
 
-![single-copy_genes_list](images/ExtractedSNPfromVCF/single-copy_genes_list.png)
+   ![single-copy_genes_list](images/ExtractedSNPfromVCF/single-copy_genes_list.png)
+
+You can use such as [OrthoFinder](https://github.com/davidemms/OrthoFinder) to get an Orthogroups directory. And then use this command to get a single-copy genes ID list.
+
+```shell
+grep -Fwf Orthogroups_SingleCopyOrthologues.txt Orthogroups.txt > full.SingleCopyGenesIDS.txt
+```
 
 
 
