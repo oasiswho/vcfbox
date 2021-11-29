@@ -215,4 +215,4 @@ V1.0 added python script ExtractedSNPfromVCF_V1.6
 
 ## Acknowledges
 
-We thank [Mingcheng Wang](https://orcid.org/0000-0002-3631-9174) for his generous help for unselfishly providing ideas for python script ExtractedSNPfromVCF. We thank [Li He](https://orcid.org/0000-0002-4591-8056) for his guidance and suggestions for this project.
+We appreciate [Mingcheng Wang](https://orcid.org/0000-0002-3631-9174) for his generous help for providing ideas for python script ExtractedSNPfromVCF. We thank [Li He](https://orcid.org/0000-0002-4591-8056) and [Hongpu Chen](https://hongpu-chen.github.io/) for their guidance and suggestions for this project.
