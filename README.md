@@ -1,6 +1,6 @@
 # VCFbox
 
-Welcome to VCFbox! These box contains some tools for VCF. Version: 1.0
+Welcome to VCFbox! This box contains some tools for VCF. Version: 1.0
 
 
 
@@ -26,7 +26,7 @@ Requirement:
 
 ### Introduction
 
-This script can extract SNP from a singlecopy gene ID and GFF into individual fasta files by using VCF file
+This script can extract SNP from a single-copy genes ID list and GFF into individual fasta files and phy files by using VCF file
 
 
 
@@ -77,6 +77,12 @@ Empty
 
 ### Inputs
 
+Sample files are from this paper:
+
+> He L, Jia KH, Zhang RG, Wang Y, Shi TL, Li ZC, Zeng SW, Cai XJ, Wagner ND, Hörandl E, Muyle A, Yang K, Charlesworth D, Mao JF. Chromosome-scale assembly of the genome of Salix dunnii reveals a male-heterogametic sex determination system on chromosome 7. Mol Ecol Resour. 2021 Aug;21(6):1966-1982. doi: 10.1111/1755-0998.13362
+
+
+
 1. Chromosome level GFF file, only have longest transcript. (One gene, one mRNA)
 
 ![chromosome_level_gff.png](images/ExtractedSNPfromVCF/chromosome_level_gff.png)
@@ -89,7 +95,13 @@ Empty
 
 
 
-3. Single-copy genes ID list, this list corresponds to GFF file.
+3. Single-copy genes ID list, this list should correspond to GFF file. You can use such as [OrthoFinder](https://github.com/davidemms/OrthoFinder) to get an Orthogroups directory. And then use this command to get a single-copy genes ID list.
+
+   ```shell
+   grep -Fwf Orthogroups_SingleCopyOrthologues.txt Orthogroups.txt > full.SingleCopyGenesIDS.txt
+   ```
+
+   
 
 ![single-copy_genes_list](images/ExtractedSNPfromVCF/single-copy_genes_list.png)
 
@@ -201,4 +213,4 @@ V1.0 added python script ExtractedSNPfromVCF_V1.6
 
 ## Acknowledges
 
-We thank Mingcheng Wang for his generous help for unselfishly providing ideas for python script ExtractedSNPfromVCF.
+We thank [Mingcheng Wang](https://orcid.org/0000-0002-3631-9174) for his generous help for unselfishly providing ideas for python script ExtractedSNPfromVCF. We thank [Li He](https://orcid.org/0000-0002-4591-8056) for his guidance and suggestions for this project.
