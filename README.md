@@ -14,7 +14,7 @@ Requirement:
 
 # List of Tools
 
-<a href="#ExtractedSNPfromVCF">ExtractedSNPfromVCF</a>
+<a href="#ExtractSNPfromVCF">ExtractSNPfromVCF</a>
 
 
 
@@ -22,11 +22,11 @@ Requirement:
 
 # Tools
 
-## <span name = "ExtractedSNPfromVCF">ExtractedSNPfromVCF</span>
+## <span name = "ExtractSNPfromVCF">ExtractSNPfromVCF</span>
 
 ### Introduction
 
-This script can extract SNP from a single-copy genes ID list and GFF into individual fasta files and phy files by using VCF file
+This script can be used to extract SNP from a VCF using single-copy genes ID list and GFF into individual fasta files and phy files.
 
 
 
@@ -42,7 +42,7 @@ pip install vcf
 pip install Bio
 
 #Start
-python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -phy -snp 1 empty -keep
+python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -phy -snp 1 empty -keep
 ```
 
 
@@ -50,7 +50,7 @@ python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecop
 ### Usage
 
 ```
-usage: ExtractedSNPfromVCF.py [-h] [-input VCF_file] [-gff GFF_file] [-scg SCG_file] [-snp snp_number] [-phy]{empty} ...
+usage: ExtractSNPfromVCF.py [-h] [-input VCF_file] [-gff GFF_file] [-scg SCG_file] [-snp snp_number] [-phy]{empty} ...
         
 Input
   Input vcf file, gff file, single-copy genes list
@@ -60,16 +60,16 @@ Input
 
 SNP
   screen genes under the snp number
-  -snp snp_number  screen genes under the snp number
+  -snp snp_number  screen genes less than the snp number
 
 Output
   options for outputting format phy, the default parameter will output fasta
-  -phy             output sequence with relaxed-phylip format
+  -phy             output sequence with relaxed-phylip format and fasta format
 
 Empty
   Keep the gene or discard the gene
   -keep       Keep the gene if codon1-2 or codon3 is empty
-  -discard    Discard the gene with empty codon1-2 or codon3
+  -discard    Discard the gene if codon1-2 or codon3 is empty
 
 ```
 
@@ -77,7 +77,7 @@ Empty
 
 ### Inputs
 
-Sample files are from this paper:
+Example files are from this paper:
 
 > He L, Jia KH, Zhang RG, Wang Y, Shi TL, Li ZC, Zeng SW, Cai XJ, Wagner ND, Hörandl E, Muyle A, Yang K, Charlesworth D, Mao JF. Chromosome-scale assembly of the genome of Salix dunnii reveals a male-heterogametic sex determination system on chromosome 7. Mol Ecol Resour. 2021 Aug;21(6):1966-1982. doi: 10.1111/1755-0998.13362
 
@@ -114,25 +114,25 @@ grep -Fwf Orthogroups_SingleCopyOrthologues.txt Orthogroups.txt > full.SingleCop
 Run with default parameters:
 
 ```
-python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list empty -keep
+python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list empty -keep
 ```
 
-Output format phy
+Output format phy and fasta
 
 ```
-python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -phy empty -keep
+python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -phy empty -keep
 ```
 
 Gene screens by number of SNPs
 
 ```
-python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -snp 1 empty -keep
+python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -snp 1 empty -keep
 ```
 
-Discard all same name genes when one of the gene is empty
+ Discard the gene if codon1-2 or codon3 is empty
 
 ```
-python ExtractedSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list empty -discard
+python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list empty -discard
 ```
 
 
@@ -207,12 +207,20 @@ if chr_id ==seq_id:
 
  
 
+
+
 ## Update logs
 
-V1.0 added python script ExtractedSNPfromVCF_V1.6
+V1.0 added python script ExtractSNPfromVCF_V1.6
 
 
 
 ## Acknowledges
 
-We appreciate [Mingcheng Wang](https://orcid.org/0000-0002-3631-9174) for his generous help for providing ideas for python script ExtractedSNPfromVCF. We thank [Li He](https://orcid.org/0000-0002-4591-8056) and [Hongpu Chen](https://hongpu-chen.github.io/) for their guidance and suggestions for this project.
+We appreciate [Mingcheng Wang](https://orcid.org/0000-0002-3631-9174) for his generous help for providing ideas for python script ExtractSNPfromVCF. 
+
+We thank Sergey and [Hongpu Chen](https://hongpu-chen.github.io/) for their guidance and suggestions for this project.
+
+If the example works, please citation
+
+> He L, Jia KH, Zhang RG, Wang Y, Shi TL, Li ZC, Zeng SW, Cai XJ, Wagner ND, Hörandl E, Muyle A, Yang K, Charlesworth D, Mao JF. Chromosome-scale assembly of the genome of Salix dunnii reveals a male-heterogametic sex determination system on chromosome 7. Mol Ecol Resour. 2021 Aug;21(6):1966-1982. doi: 10.1111/1755-0998.13362
