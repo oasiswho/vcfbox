@@ -26,7 +26,7 @@ Requirement:
 
 ### Introduction
 
-This script can be used to extract SNP from a VCF using single-copy genes ID list and GFF into individual fasta files and phy files.
+This script can be applied to extract SNPs from a VCF file by using a single-copy genes ID list and a GFF file into individual fasta file and phy file.
 
 
 
@@ -59,8 +59,8 @@ Input
   -scg SCG_file    input scg file
 
 SNP
-  screen genes under the snp number
-  -snp snp_number  screen genes less than the snp number
+  does not output genes with the number of SNPs less than was set
+  -snp snp_number  does not output genes with the number of SNPs less than was set
 
 Output
   options for outputting format phy, the default parameter will output fasta
@@ -123,7 +123,7 @@ Output format phy and fasta
 python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -phy empty -keep
 ```
 
-Gene screens by number of SNPs
+Does not output genes with the number of SNPs less than was set
 
 ```
 python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -snp 1 empty -keep
@@ -188,7 +188,7 @@ fullCDS/
 
 ### Custom modification
 
-If you use gff which only have mRNA with no gene, you should change the code. e.g.
+If gff file which only have 'mRNA'  instead of  'gene'  is used,  the code should be changed. e.g.
 
 ```python
 if chr_id ==seq_id:
@@ -207,6 +207,14 @@ if chr_id ==seq_id:
 
  
 
+## Citation
+
+If the script works, please cite
+
+For ExtractSNPfromVCF
+
+> Sergey Gulyaev, Xin-Jie Cai, Fei-Yi Guo, Satoshi Kikuchi, Wendy L. Applequist, Zhi-Xiang Zhang, Elvira Hörandl, Li He. The phylogeny of Salix revealed by whole genome re-sequencing suggests different sex-determination systems in major groups of the genus. Annals of Botany.  (submitted).
+
 
 
 ## Update logs
@@ -221,6 +229,4 @@ We appreciate [Mingcheng Wang](https://orcid.org/0000-0002-3631-9174) for his ge
 
 We thank Sergey and [Hongpu Chen](https://hongpu-chen.github.io/) for their guidance and suggestions for this project.
 
-If the example works, please citation
 
-> He L, Jia KH, Zhang RG, Wang Y, Shi TL, Li ZC, Zeng SW, Cai XJ, Wagner ND, Hörandl E, Muyle A, Yang K, Charlesworth D, Mao JF. Chromosome-scale assembly of the genome of Salix dunnii reveals a male-heterogametic sex determination system on chromosome 7. Mol Ecol Resour. 2021 Aug;21(6):1966-1982. doi: 10.1111/1755-0998.13362
