@@ -103,6 +103,10 @@ Example files are from this paper:
 
 You can use such as [OrthoFinder](https://github.com/davidemms/OrthoFinder) to get an Orthogroups directory. And then use this command to get a single-copy genes ID list.
 
+**The sing-copy gene list should have as same number of chromosome as gff file and VCF file.**
+
+**And all of them should have same order.**
+
 ```shell
 grep -Fwf Orthogroups_SingleCopyOrthologues.txt Orthogroups.txt > full.SingleCopyGenesIDS.txt
 ```
@@ -219,6 +223,8 @@ For ExtractSNPfromVCF
 
 ## Update logs
 
+V1.1 update python script ExtractSNPfromVCF_V1.8
+
 V1.0 added python script ExtractSNPfromVCF_V1.6
 
 
@@ -228,5 +234,4 @@ V1.0 added python script ExtractSNPfromVCF_V1.6
 We appreciate [Mingcheng Wang](https://orcid.org/0000-0002-3631-9174) for his generous help for providing ideas for python script ExtractSNPfromVCF. 
 
 We thank Sergey and [Hongpu Chen](https://hongpu-chen.github.io/) for their guidance and suggestions for this project.
-
 
