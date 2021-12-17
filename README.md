@@ -103,7 +103,7 @@ Example files are from this paper:
 
 You can use such as [OrthoFinder](https://github.com/davidemms/OrthoFinder) to get an Orthogroups directory. And then use this command to get a single-copy genes ID list.
 
-**The sing-copy gene list should have as same number of chromosome as gff file and VCF file.**
+**The VCF file should have as same number of chromosome as (or less) GFF file and Single-copy gene file.**
 
 **And all of them should have same order.**
 
