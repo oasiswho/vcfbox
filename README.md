@@ -50,7 +50,9 @@ python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopyg
 ### Usage
 
 ```
-usage: ExtractSNPfromVCF.py [-h] [-input VCF_file] [-gff GFF_file] [-scg SCG_file] [-snp snp_number] [-phy]{empty} ...
+usage: main.py [-h] [-input VCF_file] [-gff GFF_file] [-scg SCG_file]
+               [-snp snp_number] [-E Exclude_Gene] [-e Exclude_Sample] [-phy]
+               {empty} ...
         
 Input
   Input vcf file, gff file, single-copy genes list
@@ -58,6 +60,10 @@ Input
   -gff GFF_file    input GFF file
   -scg SCG_file    input scg file
 
+Exclude
+  Exlude genes or samples
+  -E Exclude_Gene    Exclude genes with >= value -E missing samples
+  -e Exclude_Sample  Exclude genes with >= value -E missing data
 SNP
   does not output genes with the number of SNPs less than was set
   -snp snp_number  does not output genes with the number of SNPs less than was set
@@ -139,7 +145,11 @@ python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopyg
 python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list empty -discard
 ```
 
+Exclude gene when missing_samples >= 10%, exclude samples when miss_snps >=10%
 
+```
+python ExtractSNPfromVCF.py -input samples.vcf -gff samples.gff -scg singlecopygenes.list -E 0.1 -e 0.1 empty -keep
+```
 
 Outputs:
 
@@ -217,11 +227,13 @@ If the script works, please cite
 
 For ExtractSNPfromVCF
 
-> Sergey Gulyaev, Xin-Jie Cai, Fei-Yi Guo, Satoshi Kikuchi, Wendy L. Applequist, Zhi-Xiang Zhang, Elvira Hörandl, Li He. The phylogeny of Salix revealed by whole genome re-sequencing suggests different sex-determination systems in major groups of the genus. Annals of Botany.  (submitted).
+> Sergey Gulyaev, Xin-Jie Cai, Fei-Yi Guo, Satoshi Kikuchi, Wendy L Applequist, Zhi-Xiang Zhang, Elvira Hörandl, Li He* , The phylogeny of Salix revealed by whole genome re-sequencing suggests different sex-determination systems in major groups of the genus, Annals of Botany, 2022, mcac012, https://doi.org/10.1093/aob/mcac012
 
 
 
 ## Update logs
+
+V1.2 update python script ExtractSNPfromVCF_V1.9
 
 V1.1 update python script ExtractSNPfromVCF_V1.8
 
